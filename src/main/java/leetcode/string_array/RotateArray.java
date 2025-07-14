@@ -1,4 +1,4 @@
-package leetcode.stringarray;
+package leetcode.string_array;
 
 public class RotateArray {
     public void rotate(int[] nums, int k) {

@@ -1,4 +1,4 @@
-package leetcode.stringarray;
+package leetcode.string_array;
 
 public class MajorityElement {
     public int majorityElement(int[] nums) {

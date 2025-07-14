@@ -1,4 +1,4 @@
-package leetcode.stringarray;
+package leetcode.string_array;
 
 public class BestTimeStockI {
     public int maxProfit(int[] prices) {

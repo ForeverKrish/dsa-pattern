@@ -1,4 +1,4 @@
-package leetcode.stringarray;
+package leetcode.string_array;
 
 public class MergeSortedArray {
     public void merge(int[] nums1, int m, int[] nums2, int n) {

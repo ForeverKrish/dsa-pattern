@@ -1,4 +1,4 @@
-package leetcode.stringarray;
+package leetcode.string_array;
 
 public class JumpGameI {
     public boolean canJump(int[] nums) {

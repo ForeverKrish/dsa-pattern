@@ -1,4 +1,4 @@
-package leetcode.stringarray;
+package leetcode.string_array;
 
 import java.util.*;
 public class RandomizedSet {
