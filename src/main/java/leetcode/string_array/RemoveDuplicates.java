@@ -1,15 +1,20 @@
 package leetcode.string_array;
 
 public class RemoveDuplicates {
+
     public int removeDuplicates(int[] nums) {
-        if (nums.length == 0) return 0;
-        int write = 1;
-        for (int read = 1; read < nums.length; read++) {
-            if (nums[read] != nums[read - 1]) {
-                nums[write++] = nums[read];
+        int readIndex = 0, writeIndex = 0;
+
+        while(readIndex < nums.length){
+            if(readIndex < 1){
+                writeIndex++;
             }
+            if(nums[readIndex] != nums[writeIndex-1]){ //IMP: use writeIndex instead of read to tackle inplace overwrites OR use single pointer to write and foreach to read
+                nums[writeIndex++] = nums[readIndex];
+            }
+            readIndex++;
         }
-        return write;
+        return writeIndex;
     }
 
     public static void main(String[] args) {

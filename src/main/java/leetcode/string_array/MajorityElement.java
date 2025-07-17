@@ -1,6 +1,7 @@
 package leetcode.string_array;
 
 public class MajorityElement {
+    // Boyer–Moore Voting
     public int majorityElement(int[] nums) {
         if (nums == null || nums.length == 0) {
             return -1; // Or throw an exception for an empty array
