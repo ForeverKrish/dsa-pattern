@@ -1,34 +1,32 @@
 package leetcode.sliding_window;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class LongestUniqueSubstr {
 
     public int lengthOfLongestSubstring(String s){
-        int start = 0, end = 0;
-        Map<Character, Integer> map = new HashMap<>();
-        int maxLen = 0;
+        int maxLength = 0;
+        Set<Character> freqSet = new HashSet<>();
 
-        while(end < (s.length()-1)){
-            char currentChar = s.charAt(end);
-            map.put(currentChar,map.getOrDefault(currentChar,0)+1);
+        int start = 0,end = 0;
 
-            //check unique
-            while( (end - start + 1) > map.size() ){
-                map.put(s.charAt(start),map.get(s.charAt(start)) - 1);
-                if(map.get(s.charAt(start)) == 0) {
-                    map.remove(s.charAt(start));
-                }
+        while(end<s.length()){
+            //check the uniqueness of current character
+            if(!freqSet.contains(s.charAt(end))){
+                //new character in window
+                freqSet.add(s.charAt(end));
+                maxLength = Math.max(maxLength,end-start+1);
+                end ++;
+            }else{
+                //duplicate : start removing from start until the reqd. duplicate is removed
+                freqSet.remove(s.charAt(start));
                 start++;
             }
-
-            //update length of the longest subarray
-            maxLen = Math.max(maxLen, (end - start + 1));
-            end ++;
-
         }
-        return maxLen;
+        return maxLength;
     }
 
     public int lengthOfLongestSubstringMinimal(String s) {
